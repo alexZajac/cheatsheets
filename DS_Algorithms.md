@@ -3,30 +3,39 @@
 This list is inspired by the original gist of [TSiege](https://gist.github.com/TSiege/cbb0507082bb18ff7e4b), [The InterviewCake](https://www.interviewcake.com/data-structures-reference), the classes of [William Fisset](https://www.youtube.com/playlist?list=PLDV1Zeh2NRsB6SWUrDFW2RmDotAfPbeHu) and various others sources on the internet.
 
 First we must define the difference between an Abstract Data Type and Data Structures :
-  - An abstract data type is an abstraction of a data structure which provides only the interface to which a data structure must adhere to. The interface does not give any specific details about how something should be implemented or in what programming languages.
-  
-  - A data structure is a collection of data types, how those data types interact internally, and any associated operations on them from the outside world. We talk about the cohesion of the elements of a data structure and the importance of coupling with other data structures in a system so we know where to set up the boundaries and define our rules for data hiding. In short, the data structure is very concrete and practical.
+
+- An abstract data type is an abstraction of a data structure which provides only the interface to which a data structure must adhere to. The interface does not give any specific details about how something should be implemented or in what programming languages.
+
+- A data structure is a collection of data types, how those data types interact internally, and any associated operations on them from the outside world. We talk about the cohesion of the elements of a data structure and the importance of coupling with other data structures in a system so we know where to set up the boundaries and define our rules for data hiding. In short, the data structure is very concrete and practical.
+
 ## Data Structure Fundamentals
 
 ### **Static Arrays**
-![](assets/array.svg)
+
+![](images/array.svg)
+
 #### Definition:
-> An array organizes items sequentially, one after another in memory. Each position in the array has an index, starting at 0. It is one of the oldest, most commonly used data structures. 
+
+> An array organizes items sequentially, one after another in memory. Each position in the array has an index, starting at 0. It is one of the oldest, most commonly used data structures.
 
 #### Strength:
+
 - **Fast lookups**. Retrieving the element at a given index takes O(1) time, regardless of the length of the array.
+
 #### Weakness:
+
 - **Fixed size**. You need to specify how many elements you're going to store in your array ahead of time. (Unless you're using a fancy dynamic array.)
 
-#### Basic Operations: 
+#### Basic Operations:
+
 Following are the basic operations supported by an array.
 
 - Traverse − print all the array elements one by one.
 - Search − Searches an element using the given index or by the value.
 - Update − Updates an element at the given index.
 
-  
 #### Big O analysis:
+
 - Access: O(1),
 - Search: O(n),
 - Optimized Search (binary): O(log n),
@@ -34,20 +43,27 @@ Following are the basic operations supported by an array.
 - Deletion: N/A
 
 ### **Dynamic Arrays**
-![](assets/dynamic_array.svg)
+
+![](images/dynamic_array.svg)
+
 #### Definition:
+
 > One limitation of arrays is that they're fixed size, meaning you need to specify the number of elements your array will hold ahead of time.
-A dynamic array expands as you add more elements. So you don't need to determine the size ahead of time. 
+> A dynamic array expands as you add more elements. So you don't need to determine the size ahead of time.
 
 #### Strengths:
+
 - **Fast lookups**. Just like arrays, retrieving the element at a given index takes O(1) time.
 - **Variable size**. You can add as many items as you want, and the dynamic array will expand to hold them.
 - **Cache-friendly**. Just like arrays, dynamic arrays place items right next to each other in memory, making efficient use of caches.
+
 #### Weaknesses:
+
 - **Slow worst-case appends**. Usually, adding a new element at the end of the dynamic array takes O(1) time. But if the dynamic array doesn't have any room for the new item, it'll need to expand, which takes O(n) time.
 - **Costly inserts and deletes**. Just like arrays, elements are stored adjacent to each other. So adding or removing an item in the middle of the array requires "scooting over" other elements, which takes O(n) time
 
-#### Basic Operations: 
+#### Basic Operations:
+
 Following are the basic operations supported by an array.
 
 - Traverse − print all the array elements one by one.
@@ -56,8 +72,8 @@ Following are the basic operations supported by an array.
 - Search − Searches an element using the given index or by the value.
 - Update − Updates an element at the given index.
 
-  
 #### Big O analysis:
+
 - Access: O(1),
 - Search: O(n),
 - Optimized Search (binary): O(log n),
@@ -67,15 +83,15 @@ Following are the basic operations supported by an array.
 
 #### [Link to common exercises on Arrays](https://leetcode.com/tag/array/)
 
-  
-
 ###**Linked List**
-####Definition: 
+####Definition:
+
 - Stores data with **nodes** that point to other nodes.
   - Nodes, at its most basic it has one datum and one reference (another node).
-  - A linked list _chains_ nodes together by pointing one node's reference towards another node.  
+  - A linked list _chains_ nodes together by pointing one node's reference towards another node.
 
 ####What you need to know:
+
 - Designed to optimize insertion and deletion, slow at indexing and searching.
 - **Doubly linked list** has nodes that reference the previous node.
 - **Circularly linked list** is simple linked list whose **tail**, the last node, references the **head**, the first node.
@@ -84,23 +100,25 @@ Following are the basic operations supported by an array.
   - Made with a linked list by having the head be the only place for insertion and removal.
 - **Queues**, too can be implemented with a linked list or an array.
   - Queues are a **first in, first out** (FIFO) data structure.
-  - Made with a doubly linked list that only removes from head and adds to tail.  
+  - Made with a doubly linked list that only removes from head and adds to tail.
 
 ####Big O efficiency:
-- Indexing:         Linked Lists: O(n)
-- Search:           Linked Lists: O(n)
-- Optimized Search: Linked Lists: O(n)
-- Insertion:        Linked Lists: O(1)  
 
+- Indexing: Linked Lists: O(n)
+- Search: Linked Lists: O(n)
+- Optimized Search: Linked Lists: O(n)
+- Insertion: Linked Lists: O(1)
 
 ###**Hash Table or Hash Map**
-####Definition: 
+####Definition:
+
 - Stores data with key value pairs.
-- **Hash functions** accept a key and return an output unique only to that specific key. 
+- **Hash functions** accept a key and return an output unique only to that specific key.
   - This is known as **hashing**, which is the concept that an input and an output have a one-to-one correspondence to map information.
   - Hash functions return a unique address in memory for that data.
 
 ####What you need to know:
+
 - Designed to optimize searching, insertion, and deletion.
 - **Hash collisions** are when a hash function returns the same output for two distinct inputs.
   - All hash functions have this problem.
@@ -108,17 +126,19 @@ Following are the basic operations supported by an array.
 - Hashes are important for associative arrays and database indexing.
 
 ####Big O efficiency:
-- Indexing:         Hash Tables: O(1)
-- Search:           Hash Tables: O(1)
-- Insertion:        Hash Tables: O(1)  
 
+- Indexing: Hash Tables: O(1)
+- Search: Hash Tables: O(1)
+- Insertion: Hash Tables: O(1)
 
 ###**Binary Tree**
-####Definition: 
+####Definition:
+
 - Is a tree like data structure where every node has at most two children.
   - There is one left and right child node.
 
 ####What you need to know:
+
 - Designed to optimize searching and sorting.
 - A **degenerate tree** is an unbalanced tree, which if entirely one-sided is a essentially a linked list.
 - They are comparably simple to implement than other data structures.
@@ -130,83 +150,98 @@ Following are the basic operations supported by an array.
   - Because of the above it is more likely to be used as a data structure than a binary tree.
 
 ####Big O efficiency:
-- Indexing:  Binary Search Tree: O(log n)
-- Search:    Binary Search Tree: O(log n)
-- Insertion: Binary Search Tree: O(log n) 
 
+- Indexing: Binary Search Tree: O(log n)
+- Search: Binary Search Tree: O(log n)
+- Insertion: Binary Search Tree: O(log n)
 
 ## Search Basics
+
 ###**Breadth First Search**
 ####Definition:
+
 - An algorithm that searches a tree (or graph) by searching levels of the tree first, starting at the root.
-  - It finds every node on the same level, most often moving left to right. 
+  - It finds every node on the same level, most often moving left to right.
   - While doing this it tracks the children nodes of the nodes on the current level.
   - When finished examining a level it moves to the left most node on the next level.
-  - The bottom-right most node is evaluated last (the node that is deepest and is farthest right of it's level). 
+  - The bottom-right most node is evaluated last (the node that is deepest and is farthest right of it's level).
 
 ####What you need to know:
+
 - Optimal for searching a tree that is wider than it is deep.
 - Uses a queue to store information about the tree while it traverses a tree.
+
   - Because it uses a queue it is more memory intensive than **depth first search**.
   - The queue uses more memory because it needs to stores pointers
-  
+
 ####Big O efficiency:
+
 - Search: Breadth First Search: O(|E| + |V|)
 - E is number of edges
 - V is number of vertices
 
 ###**Depth First Search**
 ####Definition:
+
 - An algorithm that searches a tree (or graph) by searching depth of the tree first, starting at the root.
+
   - It traverses left down a tree until it cannot go further.
   - Once it reaches the end of a branch it traverses back up trying the right child of nodes on that branch, and if possible left from the right children.
   - When finished examining a branch it moves to the node right of the root then tries to go left on all it's children until it reaches the bottom.
-  - The right most node is evaluated last (the node that is right of all it's ancestors). 
-  
+  - The right most node is evaluated last (the node that is right of all it's ancestors).
+
 ####What you need to know:
+
 - Optimal for searching a tree that is deeper than it is wide.
 - Uses a stack to push nodes onto.
+
   - Because a stack is LIFO it does not need to keep track of the nodes pointers and is therefore less memory intensive than breadth first search.
   - Once it cannot go further left it begins evaluating the stack.
-  
+
 ####Big O efficiency:
+
 - Search: Depth First Search: O(|E| + |V|)
 - E is number of edges
 - V is number of vertices
 
-
 ####Breadth First Search Vs. Depth First Search
+
 - The simple answer to this question is that it depends on the size and shape of the tree.
   - For wide, shallow trees use Breadth First Search
   - For deep, narrow trees use Depth First Search
 
 ####Nuances:
-  - Because BFS uses queues to store information about the nodes and its children, it could use more memory than is available on your computer.  (But you probably won't have to worry about this.)
-  - If using a DFS on a tree that is very deep you might go unnecessarily deep in the search. See [xkcd](http://xkcd.com/761/) for more information.
-  - Breadth First Search tends to be a looping algorithm.
-  - Depth First Search tends to be a recursive algorithm.
 
+- Because BFS uses queues to store information about the nodes and its children, it could use more memory than is available on your computer. (But you probably won't have to worry about this.)
+- If using a DFS on a tree that is very deep you might go unnecessarily deep in the search. See [xkcd](http://xkcd.com/761/) for more information.
+- Breadth First Search tends to be a looping algorithm.
+- Depth First Search tends to be a recursive algorithm.
 
 ## Efficient Sorting Basics
+
 ###**Merge Sort**
 ####Definition:
+
 - A comparison based sorting algorithm
   - Divides entire dataset into groups of at most two.
   - Compares each number one at a time, moving the smallest number to left of the pair.
-  - Once all pairs sorted it then compares left most elements of the two leftmost pairs creating a sorted group of four with the smallest numbers on the left and the largest ones on the right. 
+  - Once all pairs sorted it then compares left most elements of the two leftmost pairs creating a sorted group of four with the smallest numbers on the left and the largest ones on the right.
   - This process is repeated until there is only one set.
 
 ####What you need to know:
+
 - This is one of the most basic sorting algorithms.
 - Know that it divides all the data into as small possible sets then compares them.
 
 ####Big O efficiency:
+
 - Best Case Sort: Merge Sort: O(n)
 - Average Case Sort: Merge Sort: O(n log n)
 - Worst Case Sort: Merge Sort: O(n log n)
 
 ###**Quicksort**
 ####Definition:
+
 - A comparison based sorting algorithm
   - Divides entire dataset in half by selecting the average element and putting all smaller elements to the left of the average.
   - It repeats this process on the left side until it is comparing only two elements at which point the left side is sorted.
@@ -214,60 +249,71 @@ Following are the basic operations supported by an array.
 - Computer architecture favors the quicksort process.
 
 ####What you need to know:
+
 - While it has the same Big O as (or worse in some cases) many other sorting algorithms it is often faster in practice than many other sorting algorithms, such as merge sort.
 - Know that it halves the data set by the average continuously until all the information is sorted.
 
 ####Big O efficiency:
+
 - Best Case Sort: Merge Sort: O(n)
 - Average Case Sort: Merge Sort: O(n log n)
 - Worst Case Sort: Merge Sort: O(n^2)
 
 ###**Bubble Sort**
 ####Definition:
+
 - A comparison based sorting algorithm
   - It iterates left to right comparing every couplet, moving the smaller element to the left.
   - It repeats this process until it no longer moves and element to the left.
 
 ####What you need to know:
+
 - While it is very simple to implement, it is the least efficient of these three sorting methods.
 - Know that it moves one space to the right comparing two elements at a time and moving the smaller on to left.
 
 ####Big O efficiency:
+
 - Best Case Sort: Merge Sort: O(n)
 - Average Case Sort: Merge Sort: O(n^2)
 - Worst Case Sort: Merge Sort: O(n^2)
 
 ####Merge Sort Vs. Quicksort
+
 - Quicksort is likely faster in practice.
 - Merge Sort divides the set into the smallest possible groups immediately then reconstructs the incrementally as it sorts the groupings.
 - Quicksort continually divides the set by the average, until the set is recursively sorted.
 
 ## Basic Types of Algorithms
+
 ###**Recursive Algorithms**
 ####Definition:
+
 - An algorithm that calls itself in its definition.
   - **Recursive case** a conditional statement that is used to trigger the recursion.
   - **Base case** a conditional statement that is used to break the recursion.
 
 ####What you need to know:
+
 - **Stack level too deep** and **stack overflow**.
   - If you've seen either of these from a recursive algorithm, you messed up.
   - It means that your base case was never triggered because it was faulty or the problem was so massive you ran out of RAM before reaching it.
   - Knowing whether or not you will reach a base case is integral to correctly using recursion.
   - Often used in Depth First Search
 
-
 ###**Iterative Algorithms**
 ####Definition:
+
 - An algorithm that is called repeatedly but for a finite number of times, each time being a single iteration.
   - Often used to move incrementally through a data set.
 
 ####What you need to know:
+
 - Generally you will see iteration as loops, for, while, and until statements.
 - Think of iteration as moving one at a time through a set.
 - Often used to move through an array.
 
 ####Recursion Vs. Iteration
+
 - The differences between recursion and iteration can be confusing to distinguish since both can be used to implement the other. But know that,
   - Recursion is, usually, more expressive and easier to implement.
   - Iteration uses less memory.
@@ -276,6 +322,7 @@ Following are the basic operations supported by an array.
 - Check out this [Stack Overflow post](http://stackoverflow.com/questions/19794739/what-is-the-difference-between-iteration-and-recursion) for more info.
 
 ####Pseudo Code of Moving Through an Array (this is why iteration is used for this)
+
 ```
 | Recursion                    | Iteration                     |
 | ---------------------------- | ----------------------------- |
@@ -286,8 +333,10 @@ Following are the basic operations supported by an array.
 | else                         |
 | exit loop                    |
 ```
+
 ###**Greedy Algorithm**
 ####Definition:
+
 - An algorithm that, while executing, selects only the information that meets a certain criteria.
 - The general five components, taken from [Wikipedia](http://en.wikipedia.org/wiki/Greedy_algorithm#Specifics):
   - A candidate set, from which a solution is created.
@@ -297,11 +346,13 @@ Following are the basic operations supported by an array.
   - A solution function, which will indicate when we have discovered a complete solution.
 
 ####What you need to know:
+
 - Used to find the optimal solution for a given problem.
 - Generally used on sets of data where only a small proportion of the information evaluated meets the desired result.
 - Often a greedy algorithm can help reduce the Big O of an algorithm.
 
 ####Pseudo Code of a Greedy Algorithm to Find Largest Difference of any Two Numbers in an Array.
+
 ```
 greedy algorithm (array)
   var largest difference = 0
