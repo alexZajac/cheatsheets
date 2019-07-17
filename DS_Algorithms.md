@@ -83,79 +83,194 @@ Following are the basic operations supported by an array.
 
 #### [Link to common exercises on Arrays](https://leetcode.com/tag/array/)
 
-###**Linked List**
-####Definition:
+### **Linked List**
 
-- Stores data with **nodes** that point to other nodes.
-  - Nodes, at its most basic it has one datum and one reference (another node).
-  - A linked list _chains_ nodes together by pointing one node's reference towards another node.
+![](images/linked_list.svg)
 
-####What you need to know:
+#### Definition:
 
-- Designed to optimize insertion and deletion, slow at indexing and searching.
-- **Doubly linked list** has nodes that reference the previous node.
-- **Circularly linked list** is simple linked list whose **tail**, the last node, references the **head**, the first node.
-- **Stack**, commonly implemented with linked lists but can be made from arrays too.
-  - Stacks are **last in, first out** (LIFO) data structures.
-  - Made with a linked list by having the head be the only place for insertion and removal.
-- **Queues**, too can be implemented with a linked list or an array.
-  - Queues are a **first in, first out** (FIFO) data structure.
-  - Made with a doubly linked list that only removes from head and adds to tail.
+> A linked list organizes items sequentially, with each item storing a pointer to the next one. An item in a linked list is called a **node**. The first node is called the **head**. The last node is called the **tail**.
 
-####Big O efficiency:
+#### Strengths:
 
-- Indexing: Linked Lists: O(n)
-- Search: Linked Lists: O(n)
-- Optimized Search: Linked Lists: O(n)
-- Insertion: Linked Lists: O(1)
+- **Fast operations on the ends**. Adding elements at either end of a linked list is O(1). Removing the first element is also O(1).
+- **Flexible size**. There's no need to specify how many elements you're going to store ahead of time. You can keep adding elements as long as there's enough space on the machine.
 
-###**Hash Table or Hash Map**
-####Definition:
+#### Weaknesses:
 
-- Stores data with key value pairs.
-- **Hash functions** accept a key and return an output unique only to that specific key.
-  - This is known as **hashing**, which is the concept that an input and an output have a one-to-one correspondence to map information.
-  - Hash functions return a unique address in memory for that data.
+- **Costly lookups**. To access or edit an item in a linked list, you have to take O(i) time to walk from the head of the list to the iith item.
 
-####What you need to know:
+#### Basic operations:
 
-- Designed to optimize searching, insertion, and deletion.
-- **Hash collisions** are when a hash function returns the same output for two distinct inputs.
-  - All hash functions have this problem.
-  - This is often accommodated for by having the hash tables be very large.
-- Hashes are important for associative arrays and database indexing.
+- Insertion − Adds an element at the beginning of the list.
+- Deletion − Deletes an element at the beginning of the list.
+- Display − Displays the complete list.
+- Search − Searches an element using the given key.
+- Delete − Deletes an element using the given key.
 
-####Big O efficiency:
+#### Types of Linked lists:
 
-- Indexing: Hash Tables: O(1)
-- Search: Hash Tables: O(1)
-- Insertion: Hash Tables: O(1)
+- **Simple Linked List** − Item navigation is forward only.
+- **Doubly Linked List** − Items can be navigated forward and backward.
+- **Circular Linked List** − Last item contains link of the first element as next and the first element has a link to the last element as previous.
 
-###**Binary Tree**
-####Definition:
+#### Big O analysis:
 
-- Is a tree like data structure where every node has at most two children.
-  - There is one left and right child node.
+- Append / prepend: O(1)
+- Delete: O(n)
+- Lookup: O(n)
+- Insertion: O(n)
 
-####What you need to know:
+#### [Link to common exercises on Linked Lists](https://leetcode.com/tag/linked-list/)
 
-- Designed to optimize searching and sorting.
-- A **degenerate tree** is an unbalanced tree, which if entirely one-sided is a essentially a linked list.
-- They are comparably simple to implement than other data structures.
-- Used to make **binary search trees**.
-  - A binary tree that uses comparable keys to assign which direction a child is.
-  - Left child has a key smaller than it's parent node.
-  - Right child has a key greater than it's parent node.
-  - There can be no duplicate node.
-  - Because of the above it is more likely to be used as a data structure than a binary tree.
+### **Stack**
 
-####Big O efficiency:
+![](images/stack.svg)
 
-- Indexing: Binary Search Tree: O(log n)
-- Search: Binary Search Tree: O(log n)
-- Insertion: Binary Search Tree: O(log n)
+#### Definition:
 
-## Search Basics
+> A stack is an Abstract Data Type (ADT), commonly used in most programming languages. This feature makes it LIFO data structure. LIFO stands for Last-in-first-out.
+
+#### Strengths:
+
+- **Fast operations**. All stack operations take O(1) time. Note that it's the main DS behind Depth-First-Search.
+
+#### Basic operations:
+
+- Insertion − Pushing (storing) an element on the stack (push method).
+- Deletion − Removing (accessing) an element from the stack (pop method).
+- Last-element lookup − Accessing top of the stack element (peek method)
+
+#### Big O analysis:
+
+- pop: O(1)
+- peek: O(1)
+- push: O(1)
+
+#### [Link to common exercises on Stacks](https://leetcode.com/tag/stack/)
+
+### **Queue**
+
+![](images/queue.svg)
+
+#### Definition:
+
+> Queue is an abstract data structure, somewhat similar to Stacks. Unlike stacks, a queue is open at both its ends. One end is always used to insert data (enqueue) and the other is used to remove data (dequeue). Queue follows First-In-First-Out methodology, i.e., the data item stored first will be accessed first.
+
+#### Strengths:
+
+- **Fast operations**. All queue operations take O(1) time. Note that it's the main DS behind Depth-First-Search.
+
+#### Basic operations:
+
+- Insertion − add (store) an item to the queue (enqueue method).
+- Deletion − remove (access) an item from the queue (dequeue method).
+- Last-element lookup − Gets the element at the front of the queue without removing it (peek method).
+
+#### Big O analysis:
+
+- enqueue: O(1)
+- peek: O(1)
+- dequeue: O(1)
+
+#### [Link to common exercises on Queues](https://leetcode.com/tag/queue/)
+
+### **Hash Table or Maps**
+
+![](images/hash_table.svg)
+
+#### Definition:
+
+> A data structure that implements an associative array abstract data type, a structure that can map keys to values. A hash table uses a hash function to compute an index into an array of buckets or slots, from which the desired value can be found.
+
+#### Strengths:
+
+- **Fast lookups**. Lookups take O(1) time on average.
+- **Flexible keys**. Most data types can be used for keys, as long as they're hashable.
+
+#### Weaknesses:
+
+- **Slow worst-case lookups**. Lookups take O(n) time in the worst case.
+- **Unordered**. Keys aren't stored in a special order. If you're looking for the smallest key, the largest key, or all the keys in a range, you'll need to look through every key to find it.
+- **Single-directional lookups**. While you can look up the value for a given key in O(1) time, looking up the keys for a given value requires looping through the whole dataset — O(n) time.
+- **Not cache-friendly**. Many hash table implementations use linked lists, which don't put data next to each other in memory.
+
+#### Worst case (hash collision):
+
+What if two keys hash to the same index in our array?
+This is called a **hash collision**. There are a few different strategies for dealing with them.
+
+Here's a common one: instead of storing the actual values in our array, let's have each array slot hold a pointer to a linked list holding the values for all the keys that hash to that index.
+
+If all our keys caused hash collisions, we'd be at risk of having to walk through all of our values for a single lookup (in the example above, we'd have one big linked list). This is unlikely, but it could happen. That's the worst case O(n).
+
+#### Big O analysis:
+
+- Lookup: O(1) (worst case is O(n))
+- Delete: O(1) (worst case is O(n))
+- Insertion: O(1) (worst case is O(n))
+
+#### [Link to common exercises on Hash Tables](https://leetcode.com/tag/hash-table/)
+
+### **Trees and Binary Search Tree**
+
+![](images/binary_tree.svg)
+
+#### Definition:
+
+> Tree represents the nodes connected by edges. We will discuss binary tree or binary search tree specifically. Binary Tree is a special data structure used for data storage purposes. A binary tree has a special condition that each node can have a maximum of two children. A Binary Search Tree (BST) is a tree in which all the nodes follow the below-mentioned properties:
+>
+> - The left sub-tree of a node has a key less than or equal to its parent node's key.
+> - The right sub-tree of a node has a key greater than to its parent node's key.
+
+#### Basic operations:
+
+- Insert − Inserts an element in a tree/create a tree.
+- Delete − deletes an element in a tree/deletes a tree.
+- Search − Searches an element in a tree.
+- Preorder Traversal − Traverses a tree in a pre-order manner.
+- Inorder Traversal − Traverses a tree in an in-order manner.
+- Postorder Traversal − Traverses a tree in a post-order manner.
+
+#### Big O analysis:
+
+- Indexing: Binary Search Tree: O(log n) (worst case O(n))
+- Search: Binary Search Tree: O(log n) (worst case O(n))
+- Insertion: Binary Search Tree: O(log n) (worst case O(n))
+
+#### [Link to common exercises on Trees](https://leetcode.com/tag/tree/)
+
+### **Graphs**
+
+![](images/graph.svg)
+
+#### Definition:
+
+> A graph is a pictorial representation of a set of objects where some pairs of objects are connected by links. The interconnected objects are represented by points termed as vertices, and the links that connect the vertices are called edges.
+
+#### Strengths:
+
+- **Representing links**. Graphs are ideal for cases where you're working with things that connect to other things. Nodes and edges could, for example, respectively represent cities and highways, routers and ethernet cables, or Facebook users and their friendships.
+
+#### Weaknesses:
+
+- **Scaling challenges.** Most graph algorithms are O(nlog(n)) or even slower. Depending on the size of your graph, running algorithms across your nodes may not be feasible.
+
+#### Basic operations:
+
+- Add Vertex − Adds a vertex to the graph.
+- Add Edge − Adds an edge between the two vertices of the graph.
+- Display Vertex − Displays a vertex of the graph.
+
+#### Big O analysis (adjacency list):
+
+- Add enge / vertex: O(1)
+- Remove vertex: O(|V| + |E|)
+- Remove edge: O(|E|)
+
+#### [Link to common exercises on Graphs](https://leetcode.com/tag/graph/)
+
+# Search Basics
 
 ###**Breadth First Search**
 ####Definition:
